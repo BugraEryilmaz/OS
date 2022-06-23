@@ -1,0 +1,11 @@
+pbc tc19pb0
+cat
+ls /sys
+pbs
+pbc tc19pb1
+cat
+ls /etc
+pbs
+tc19pb0 < cpuinfo.txt
+tc19pb1 < cpuinfo.txt
+quit

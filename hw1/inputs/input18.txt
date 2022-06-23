@@ -1,0 +1,17 @@
+pbc tc18pb0
+echo HOP
+pbs
+pbc tc18pb1
+ls /sys
+pbs
+pbc tc18pb2
+echo HOP
+pbs
+pbc tc18pb3
+ls -l /sys
+pbs
+tc18pb0 > outputs/t18o1.txt
+tc18pb1 > outputs/t18o2.txt
+tc18pb2 > outputs/t18o3.txt
+tc18pb3 > outputs/t18o4.txt
+quit

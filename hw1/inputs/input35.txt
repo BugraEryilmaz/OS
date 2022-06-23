@@ -1,0 +1,21 @@
+pbc tc35pb0
+ls -l /sys
+pbs
+pbc tc35pb1
+tr /a-z/ /A-Z/
+pbs
+pbc tc35pb2
+grep A
+pbs
+pbc tc35pb3
+ls -l /etc
+pbs
+pbc tc35pb4
+cat -n
+pbs
+pbc tc35pb5
+grep 1
+pbs
+tc35pb0 | tc35pb1 | tc35pb2
+tc35pb3 | tc35pb4 | tc35pb5
+quit

@@ -1,0 +1,19 @@
+pbc tc48pb0
+ls -l /etc
+ls -l /sys
+tr /a-z/ /A-Z/
+cat
+pbs
+pbc tc48pb1
+cat
+tr /a-z/ /A-Z/
+pbs
+pbc tc48pb2
+cat
+pbs
+pbc tc48pb3
+cat
+tr /A-Z/ /a-z/
+pbs
+tc48pb0 < cpuinfo.txt | tc48pb1 | tc48pb2 | tc48pb3
+quit

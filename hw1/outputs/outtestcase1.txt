@@ -1,0 +1,16 @@
+total 388
+drwxrwxrwx 1 root root   4096 Apr 14 15:20 cases
+-rwxrwxrwx 1 root root 204988 Mar 31 14:42 Ceng334___Homework_1.pdf
+drwxrwxrwx 1 root root   4096 Apr 14 15:24 inputs
+-rwxrwxrwx 1 root root 137624 Apr 14 15:19 main
+-rwxrwxrwx 1 root root   7787 Apr 14 14:57 main.cpp
+-rwxrwxrwx 1 root root    118 Apr 13 15:02 Makefile
+-rwxrwxrwx 1 root root  24696 Apr 13 15:39 myexec
+-rwxrwxrwx 1 root root    198 Apr 13 15:39 myexec.cpp
+drwxrwxrwx 1 root root   4096 Apr 14 15:25 outputs
+-rwxrwxrwx 1 root root   7096 Apr  8 16:56 parser.c
+-rwxrwxrwx 1 root root   3077 Mar 31 14:42 parser.h
+-rwxrwxrwx 1 root root    212 Mar 31 14:42 README.md
+641
+13
+641

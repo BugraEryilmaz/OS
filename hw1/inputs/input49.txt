@@ -1,0 +1,24 @@
+pbc tc49pb0
+ls -l /etc
+cat -n
+ls -l /etc
+ls -l /sys
+ls -l /etc
+ls -l /usr
+pbs
+pbc tc49pb1
+cat
+wc -c
+tr /a-z/ /A-Z/
+tr /A-Z/ /a-z/
+pbs
+pbc tc49pb2
+cat
+pbs
+pbc tc49pb3
+cat
+wc -m
+tr /a-z/ /A-Z/
+pbs
+tc49pb0 < cpuinfo.txt | tc49pb1 | tc49pb2 | tc49pb3
+quit

@@ -1,0 +1,8 @@
+pbc tc28pb0
+ls -l /sys
+pbs
+pbc tc28pb1
+grep t
+pbs
+tc28pb0 | tc28pb1 > outputs/t28o1.txt
+quit

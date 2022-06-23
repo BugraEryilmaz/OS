@@ -1,0 +1,12 @@
+pbc tc43pb0
+ls -l /sys
+cat
+ls -l /etc
+pbs
+pbc tc43pb1
+tr /a-z/ /A-Z/
+cat -n
+grep 1
+pbs
+tc43pb0 < cpuinfo.txt | tc43pb1 > outputs/t43o1.txt
+quit

@@ -1,0 +1,11 @@
+pbc tc30pb0
+cat
+pbs
+pbc tc30pb1
+grep t
+pbs
+pbc tc30pb2
+wc -l
+pbs
+tc30pb0 < cpuinfo.txt | tc30pb1 | tc30pb2
+quit

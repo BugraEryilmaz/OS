@@ -1,0 +1,13 @@
+pbc tc10pb0
+echo HOP
+ls /sys
+ls -l /etc
+pbs
+pbc tc10pb1
+ls /sys
+ls /etc
+ls /boot
+pbs
+tc10pb0
+tc10pb1
+quit

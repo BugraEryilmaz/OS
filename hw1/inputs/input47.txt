@@ -1,0 +1,36 @@
+pbc tc47pb0
+ls -l /sys
+cat
+pbs
+pbc tc47pb1
+tr /a-z/ /A-Z/
+pbs
+pbc tc47pb2
+wc -c
+cat
+pbs
+pbc tc47pb3
+cat
+pbs
+pbc tc47pb4
+cat
+tr /A-Z/ /a-z/
+pbs
+pbc tc47pb5
+wc -c
+cat
+pbs
+pbc tc47pb6
+wc -cm
+cat
+pbs
+pbc tc47pb7
+cat
+tr /a-z/ /A-Z/
+pbs
+pbc tc47pb8
+wc -c
+cat
+pbs
+tc47pb0 < cpuinfo.txt | tc47pb1 | tc47pb2 | tc47pb3 | tc47pb4 | tc47pb5 | tc47pb6 | tc47pb7 | tc47pb8 > outputs/t47o1.txt
+quit

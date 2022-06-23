@@ -1,0 +1,12 @@
+pbc tc42pb0
+ls -l /sys
+cat cpuinfo.txt
+ls -l /etc
+pbs
+pbc tc42pb1
+tr /a-z/ /A-Z/
+cat -n
+grep 1
+pbs
+tc42pb0 | tc42pb1 > outputs/t42o1.txt
+quit

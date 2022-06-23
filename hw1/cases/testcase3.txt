@@ -1,0 +1,28 @@
+pbc bundle1
+myexec 0 ls
+myexec 1 cat inputs/text2.txt
+myexec 2 echo "hello from bundle 1 again\n"
+myexec 3 echo "I am bored...\n"
+pbs
+
+bundle1 > outputs/_outtestcase3_firstexec
+
+pbc bundle2
+myexec 0 cat
+myexec 1 cat inputs/text3.txt
+myexec 2 echo "hello from bundle 1 again\n"
+pbs
+
+bundle2 < inputs/text4.txt > outputs/_outtestcase3_secondexec
+
+pbc bundle2
+myexec 0 cat
+myexec 1 cat inputs/text3.txt
+myexec 2 echo "hello from bundle 1 again\n"
+pbs
+
+bundle2 > outputs/_outtestcase3_secondexec < inputs/text4.txt 
+
+
+
+quit

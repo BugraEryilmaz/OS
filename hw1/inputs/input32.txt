@@ -1,0 +1,11 @@
+pbc tc32pb0
+cat
+pbs
+pbc tc32pb1
+grep t
+pbs
+pbc tc32pb2
+wc -l
+pbs
+tc32pb0 < cpuinfo.txt | tc32pb1 | tc32pb2 > outputs/t32o1.txt
+quit

@@ -1,0 +1,8 @@
+pbc tc24pb0
+cat
+ls /sys
+ls -l /sys
+ls -l /etc
+pbs
+tc24pb0 < cpuinfo.txt > outputs/t24o1.txt
+quit

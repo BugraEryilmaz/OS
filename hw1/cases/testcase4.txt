@@ -1,0 +1,30 @@
+pbc bundle2
+myexec 0 cat
+myexec 1 cat inputs/text3.txt
+myexec 2 echo "hello from bundle 1 again\n"
+pbs
+pbc bundle3
+myexec 3 wc -c 
+myexec 4 wc -l 
+myexec 5 wc -m 
+pbs
+pbc bundle4
+myexec 6 python3 -c "import sys; l=[l.strip() for l in sys.stdin]; print(l, flush=True); print(l, flush=True)"
+myexec 7 python3 -c "import sys; l=[l.strip() for l in sys.stdin]; print(l, flush=True)"
+pbs
+pbc bundle5
+myexec 8 wc -l 
+pbs
+pbc bundle6
+myexec 8 wc
+myexec 9 wc
+myexec 10 wc
+pbs
+pbc bundle7
+myexec 11 wc -c 
+myexec 12 wc -l 
+myexec 13 wc -m 
+pbs
+bundle2 < inputs/text5.txt | bundle3 | bundle4 | bundle6 | bundle7
+quit
+

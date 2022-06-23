@@ -1,0 +1,8 @@
+pbc tc29pb0
+cat
+pbs
+pbc tc29pb1
+grep t
+pbs
+tc29pb0 < cpuinfo.txt | tc29pb1 > outputs/t29o1.txt
+quit

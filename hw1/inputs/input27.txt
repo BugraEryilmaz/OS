@@ -1,0 +1,8 @@
+pbc tc27pb0
+cat
+pbs
+pbc tc27pb1
+grep t
+pbs
+tc27pb0 < cpuinfo.txt | tc27pb1
+quit

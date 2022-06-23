@@ -1,0 +1,17 @@
+pbc tc8pb0
+echo HOP
+pbs
+pbc tc8pb1
+ls /sys
+pbs
+pbc tc8pb2
+echo HOP
+pbs
+pbc tc8pb3
+ls -l /sys
+pbs
+tc8pb0
+tc8pb1
+tc8pb2
+tc8pb3
+quit

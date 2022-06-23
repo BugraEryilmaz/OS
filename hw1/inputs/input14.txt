@@ -1,0 +1,5 @@
+pbc tc14pb0
+cat
+pbs
+tc14pb0 < cpuinfo.txt
+quit

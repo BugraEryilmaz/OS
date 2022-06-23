@@ -1,0 +1,5 @@
+pbc tc22pb0
+ls -l /sys
+pbs
+tc22pb0 < cpuinfo.txt > outputs/t22o1.txt
+quit

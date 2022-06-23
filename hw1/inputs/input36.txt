@@ -1,0 +1,10 @@
+pbc tc36pb0
+ls -l /etc
+ls -l /sys
+pbs
+pbc tc36pb1
+grep a
+wc -lc
+pbs
+tc36pb0 | tc36pb1
+quit

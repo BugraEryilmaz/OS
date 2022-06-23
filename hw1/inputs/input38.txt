@@ -1,0 +1,10 @@
+pbc tc38pb0
+cat -n
+ls -l /sys
+pbs
+pbc tc38pb1
+grep a
+wc -lc
+pbs
+tc38pb0 < cpuinfo.txt | tc38pb1
+quit

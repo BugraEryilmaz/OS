@@ -1,0 +1,13 @@
+pbc tc45pb0
+ls -l /sys
+cat cpuinfo.txt
+pbs
+pbc tc45pb1
+cat
+tr /a-z/ /A-Z/
+pbs
+pbc tc45pb2
+wc -c
+pbs
+tc45pb0 | tc45pb1 | tc45pb2 > outputs/t45o1.txt
+quit

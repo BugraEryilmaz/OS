@@ -1,0 +1,14 @@
+pbc tc34pb0
+ls -l /etc
+pbs
+pbc tc34pb1
+cat -n
+pbs
+pbc tc34pb2
+grep a
+pbs
+pbc tc34pb3
+wc -lc
+pbs
+tc34pb0 | tc34pb1 | tc34pb2 | tc34pb3
+quit

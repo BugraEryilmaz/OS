@@ -1,0 +1,5 @@
+pbc tc11pb0
+ls /sys
+pbs
+tc11pb0 > outputs/t11o1.txt
+quit

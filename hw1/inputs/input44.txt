@@ -1,0 +1,13 @@
+pbc tc44pb0
+ls -l /sys
+cat cpuinfo.txt
+pbs
+pbc tc44pb1
+cat
+tr /a-z/ /A-Z/
+pbs
+pbc tc44pb2
+wc -c
+pbs
+tc44pb0 | tc44pb1 | tc44pb2
+quit

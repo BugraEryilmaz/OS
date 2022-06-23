@@ -1,0 +1,10 @@
+pbc tc37pb0
+ls -l /etc
+ls -l /sys
+pbs
+pbc tc37pb1
+grep a
+wc -lc
+pbs
+tc37pb0 | tc37pb1 > outputs/t37o1.txt
+quit

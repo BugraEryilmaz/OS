@@ -1,0 +1,15 @@
+cases
+Ceng334___Homework_1.pdf
+err.txt
+inputs
+main
+main.cpp
+Makefile
+myexec
+myexec.cpp
+outputs
+parser.c
+parser.h
+README.md
+123
+13

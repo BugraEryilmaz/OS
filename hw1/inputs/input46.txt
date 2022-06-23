@@ -1,0 +1,14 @@
+pbc tc46pb0
+ls -l /sys
+cat
+pbs
+pbc tc46pb1
+cat
+tr /a-z/ /A-Z/
+pbs
+pbc tc46pb2
+wc -c
+cat
+pbs
+tc46pb0 < cpuinfo.txt | tc46pb1 | tc46pb2 > outputs/t46o1.txt
+quit

@@ -1,0 +1,5 @@
+pbc tc13pb0
+ls -l /sys
+pbs
+tc13pb0 > outputs/t13o1.txt
+quit

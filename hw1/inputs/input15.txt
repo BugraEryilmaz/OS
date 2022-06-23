@@ -1,0 +1,7 @@
+pbc tc15pb0
+cat
+ls /sys
+ls -l /sys
+pbs
+tc15pb0 < cpuinfo.txt
+quit

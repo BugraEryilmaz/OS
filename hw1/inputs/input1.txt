@@ -1,0 +1,5 @@
+pbc tc1pb0
+ls /sys
+pbs
+tc1pb0
+quit

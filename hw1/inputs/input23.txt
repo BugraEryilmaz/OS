@@ -1,0 +1,5 @@
+pbc tc23pb0
+cat
+pbs
+tc23pb0 < cpuinfo.txt > outputs/t23o1.txt
+quit

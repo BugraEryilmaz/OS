@@ -1,0 +1,11 @@
+pbc tc9pb0
+echo HOP
+ls /sys
+pbs
+pbc tc9pb1
+ls /sys
+ls /etc
+pbs
+tc9pb0
+tc9pb1
+quit

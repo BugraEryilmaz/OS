@@ -1,0 +1,37 @@
+pbc tc50pb0
+ls -l /etc
+ls -l /usr
+ls -l /sys
+ls -l /etc
+ls -l /usr
+ls -l /sys
+ls -l /etc
+ls -l /usr
+ls -l /sys
+ls -l /etc
+ls -l /usr
+ls -l /sys
+cat
+pbs
+pbc tc50pb1
+cat
+pbs
+pbc tc50pb2
+cat
+pbs
+pbc tc50pb3
+cat
+tr /a-z/ /A-Z/
+pbs
+pbc tc50pb4
+cat
+pbs
+pbc tc50pb5
+cat
+tr /A-Z/ /a-z/
+pbs
+pbc tc50pb6
+cat
+pbs
+tc50pb0 < cpuinfo.txt | tc50pb1 | tc50pb2 | tc50pb3 | tc50pb4 | tc50pb5 | tc50pb6 > outputs/t50o1.txt
+quit

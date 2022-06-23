@@ -1,0 +1,22 @@
+pbc bundlename1
+ls
+pbs
+
+bundlename1
+
+
+pbc bundlename1
+ls
+pbs
+
+pbc b2
+myexec 1 wc -c 
+myexec 2 wc -l 
+myexec 3 wc -m 
+pbs
+
+bundlename1 | b2
+
+quit
+
+bundle8 < input4.txt

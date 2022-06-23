@@ -1,0 +1,12 @@
+pbc tc41pb0
+ls -l /sys
+cat
+ls -l /etc
+pbs
+pbc tc41pb1
+tr /a-z/ /A-Z/
+cat -n
+grep 1
+pbs
+tc41pb0 < cpuinfo.txt | tc41pb1
+quit

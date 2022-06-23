@@ -1,0 +1,9 @@
+pbc tc17pb0
+cat -n
+pbs
+pbc tc17pb1
+ls /sys
+pbs
+tc17pb0 < cpuinfo.txt
+tc17pb1 > outputs/t17o2.txt
+quit

@@ -1,0 +1,8 @@
+pbc tc26pb0
+ls /sys
+pbs
+pbc tc26pb1
+cat
+pbs
+tc26pb0 | tc26pb1
+quit

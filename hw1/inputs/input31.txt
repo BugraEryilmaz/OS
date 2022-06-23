@@ -1,0 +1,11 @@
+pbc tc31pb0
+ls -l /sys
+pbs
+pbc tc31pb1
+grep t
+pbs
+pbc tc31pb2
+wc -l
+pbs
+tc31pb0 | tc31pb1 | tc31pb2 > outputs/t31o1.txt
+quit

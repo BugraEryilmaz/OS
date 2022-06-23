@@ -1,0 +1,5 @@
+pbc tc21pb0
+echo HOP
+pbs
+tc21pb0 < cpuinfo.txt > outputs/t21o1.txt
+quit

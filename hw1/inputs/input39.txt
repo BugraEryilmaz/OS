@@ -1,0 +1,10 @@
+pbc tc39pb0
+ls -l /etc
+cat -n
+pbs
+pbc tc39pb1
+grep a
+wc -lc
+pbs
+tc39pb0 < cpuinfo.txt | tc39pb1 > outputs/t39o1.txt
+quit

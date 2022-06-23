@@ -1,0 +1,5 @@
+pbc tc12pb0
+echo HOP
+pbs
+tc12pb0 > outputs/t12o1.txt
+quit

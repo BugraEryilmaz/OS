@@ -1,0 +1,13 @@
+pbc tc20pb0
+echo HOP
+ls /sys
+ls -l /etc
+pbs
+pbc tc20pb1
+ls /sys
+ls /etc
+ls /boot
+pbs
+tc20pb0 > outputs/t20o1.txt
+tc20pb1 > outputs/t20o2.txt
+quit

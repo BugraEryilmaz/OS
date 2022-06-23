@@ -1,0 +1,13 @@
+pbc tc25pb0
+cat -n
+ls /sys
+ls -l /etc
+pbs
+pbc tc25pb1
+ls /sys
+cat
+ls /boot
+pbs
+tc25pb0 < cpuinfo.txt > outputs/t25o1.txt
+tc25pb1 < cpuinfo.txt > outputs/t25o2.txt
+quit

@@ -1,0 +1,19 @@
+pbc b1
+myexec 1 wc
+myexec 2 wc
+myexec 3 wc
+pbs
+pbc b2
+myexec 4 wc
+pbs
+pbc b3
+myexec 5 wc
+myexec 5 wc
+myexec 5 wc
+pbs
+pbc b4
+myexec 50 wc
+myexec 50 wc
+pbs
+b1 < inputs/text5.txt | b2 | b3 | b4
+quit

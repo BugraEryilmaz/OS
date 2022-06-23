@@ -1,0 +1,9 @@
+pbc tc7pb0
+echo HOP
+pbs
+pbc tc7pb1
+ls /sys
+pbs
+tc7pb0
+tc7pb1
+quit

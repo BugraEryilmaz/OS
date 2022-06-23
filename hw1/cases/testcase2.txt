@@ -1,0 +1,55 @@
+pbc bundle1
+myexec 0 ls
+myexec 1 cat 
+myexec 2 echo "hello from bundle 1 again\n"
+myexec 3 echo "I am bored...\n"
+pbs
+
+pbc bundle2
+myexec 4 wc -c
+myexec 5 wc -l
+myexec 6 wc -m
+myexec 7 grep bored
+pbs
+
+bundle1 < inputs/text1.txt | bundle2
+
+pbc bundlename1
+ls
+pbs
+
+bundlename1
+
+
+pbc bundlename1
+ls
+pbs
+
+pbc b2
+myexec 1 wc -c 
+myexec 2 wc -l 
+myexec 3 wc -m 
+pbs
+
+bundlename1 | b2
+
+pbc bundle1
+myexec 0 ps aux
+myexec 1 ps -e
+pbs
+
+pbc bundle2
+myexec 2 grep <defunct>
+pbs
+
+pbc bundle3
+myexec 3 wc -l 
+pbs
+
+pbc bundle4
+myexec 4 python3 -c "import sys; print(sum(int(l) for l in sys.stdin)<2)"
+pbs
+
+bundle1 | bundle2 | bundle3 | bundle4 > outputs/_outtestcase2_lastexec.txt
+
+quit

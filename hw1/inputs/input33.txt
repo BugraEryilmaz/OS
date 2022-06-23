@@ -1,0 +1,11 @@
+pbc tc33pb0
+cat
+pbs
+pbc tc33pb1
+grep t
+pbs
+pbc tc33pb2
+wc -l
+pbs
+tc33pb0 | tc33pb1 | tc33pb2
+quit
