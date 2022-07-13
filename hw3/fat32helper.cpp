@@ -163,23 +163,32 @@ struct_FatFileEntry *getFolder(std::wstring newLocation) {
         idx = 1;
     }
     while (idx < newLocation.size()) {
+        uint32_t cluster;
+        uint32_t currentcluster = (((uint8_t *)iter) - DATAbeginning) / CLUSTER_SIZE + 2;
         size_t nextIdx = newLocation.find_first_of('/', idx);
         if (nextIdx == std::wstring::npos) nextIdx = newLocation.size();
-        do {
-            if (iter->msdos.filename[0] == 0x00) {
-                // end of folder with no match return null
-                return nullptr;
-            }
-        } while (!compFileName(iter, newLocation.substr(idx, nextIdx - idx)));
+        std::wstring foldername = newLocation.substr(idx, nextIdx - idx);
 
-        // we found the file check if folder
-        if (!(iter->msdos.attributes & FOLDERMASK)) return nullptr;
-        // enter the folder
-        uint32_t cluster = GETDATACLUSTER(iter->msdos);
-        if (cluster == 0) {
-            // root has a special case its cluster is stored as 0. WHHHYYYY
+        if (currentcluster == biosParameterBlock->extended.RootCluster && foldername == L".") {
+            // Special case root has no . and .. entries so continue as if . is found and points to the root
             cluster = biosParameterBlock->extended.RootCluster;
+        } else {
+            do {
+                if (iter->msdos.filename[0] == 0x00) {
+                    // end of folder with no match return null
+                    return nullptr;
+                }
+            } while (!compFileName(iter, foldername));
+            // we found the file check if folder
+            if (!(iter->msdos.attributes & FOLDERMASK)) return nullptr;
+            // enter the folder
+            cluster = GETDATACLUSTER(iter->msdos);
+            if (cluster == 0) {
+                // root has a special case its cluster is stored as 0. WHHHYYYY
+                cluster = biosParameterBlock->extended.RootCluster;
+            }
         }
+
         iter = (FatFileEntry *)(DATAbeginning + CLUSTER_SIZE * (cluster - 2));
         idx = nextIdx + 1;
     }

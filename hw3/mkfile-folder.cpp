@@ -73,8 +73,8 @@ void fill83File(FatFileEntry *currentEntry, std::string filename, uint32_t clust
     currentEntry->msdos.creationTimeMs = ms;
     currentEntry->msdos.creationDate = date;
     currentEntry->msdos.lastAccessTime = modtime;
-    currentEntry->msdos.modifiedDate = moddate;
-    currentEntry->msdos.modifiedTime = modtime;
+    currentEntry->msdos.modifiedDate = date;
+    currentEntry->msdos.modifiedTime = time;
     currentEntry->msdos.eaIndex = cluster >> 16;
     currentEntry->msdos.firstCluster = cluster & 0xFFFF;
     currentEntry->msdos.fileSize = size;
@@ -153,7 +153,7 @@ void createFileEntries(FatFileEntry *dirLocation, std::wstring &dirName, uint32_
             FatFileEntry *allocatedFolder = (FatFileEntry *)allocateNewCluster(nullptr);
             cluster = (((uint8_t *)allocatedFolder) - DATAbeginning) / CLUSTER_SIZE + 2;
             // add . and .. entries into new folder
-            uint32_t dotEntryCluster = currentEntry->msdos.firstCluster | (currentEntry->msdos.eaIndex << 16);
+            uint32_t dotEntryCluster = cluster;
             uint32_t dotdotEntryCluster = (((uint8_t *)folder) - DATAbeginning) / CLUSTER_SIZE + 2;
             if (dotdotEntryCluster == biosParameterBlock->extended.RootCluster) {
                 dotdotEntryCluster = 0;
@@ -162,13 +162,15 @@ void createFileEntries(FatFileEntry *dirLocation, std::wstring &dirName, uint32_
             fill83File(nextFileEntry(allocatedFolder), "..", dotdotEntryCluster, FOLDERATTR);
         } else {
             // update .. entry so that it points to this folder
-            FatFileEntry *allocatedFolder = (FatFileEntry *)DATAbeginning + (cluster - 2) * CLUSTER_SIZE;
+            FatFileEntry *allocatedFolder = (FatFileEntry *)(DATAbeginning + (cluster - 2) * CLUSTER_SIZE);
             uint32_t dotdotEntryCluster = (((uint8_t *)folder) - DATAbeginning) / CLUSTER_SIZE + 2;
             if (dotdotEntryCluster == biosParameterBlock->extended.RootCluster) {
                 dotdotEntryCluster = 0;
             }
             FatFileEntry *iter = allocatedFolder;
             fileInfo info;
+            uint32_t curCluster = (((uint8_t *)iter) - DATAbeginning) / CLUSTER_SIZE + 2;
+            DEBUG_PRINT("checking cluster: " << curCluster);
             do {
                 if (iter->msdos.filename[0] == 0x00) {
                     // all subsequent entries are available and file not found
@@ -181,8 +183,11 @@ void createFileEntries(FatFileEntry *dirLocation, std::wstring &dirName, uint32_
                 } else {
                     info = getFileInfo(iter);
                     // the same file is found exit
+                    DEBUG_PRINT("checking: " << info.filename << std::endl);
                     if (info.filename.compare(L"..") == 0) {
+                        DEBUG_PRINT("found: " << info.filename << " with cluster " << info.fatFileInfo->firstCluster);
                         fill83File((FatFileEntry *)info.fatFileInfo, "..", dotdotEntryCluster, FOLDERATTR);
+                        DEBUG_PRINT("changed .. entry with cluster " << curCluster);
                         break;
                     }
                     iter = info.nextFile;
@@ -194,7 +199,7 @@ void createFileEntries(FatFileEntry *dirLocation, std::wstring &dirName, uint32_
                 cluster = (((uint8_t *)allocatedFolder) - DATAbeginning) / CLUSTER_SIZE + 2;
                 fill83File(allocatedFolder, "..", dotdotEntryCluster, FOLDERATTR);
             }
-            fill83File(nextFileEntry(allocatedFolder), "..", dotdotEntryCluster, FOLDERATTR);
+            // fill83File(nextFileEntry(allocatedFolder), "..", dotdotEntryCluster, FOLDERATTR);
         }
         if (attributes == UINT8_MAX) attributes = FOLDERATTR;
         fill83File(currentEntry, name83, cluster, attributes, time, date, ms, size);
@@ -205,9 +210,8 @@ void createFileEntries(FatFileEntry *dirLocation, std::wstring &dirName, uint32_
     }
 }
 
-bool mkfile_folder(FatFileEntry *folder, std::wstring &fileName, bool isDir, uint32_t cluster = 0,
-                   uint8_t attributes = UINT8_MAX, uint16_t time = UINT16_MAX, uint16_t date = UINT16_MAX,
-                   uint8_t ms = UINT8_MAX, uint32_t size = 0) {
+bool mkfile_folder(FatFileEntry *folder, std::wstring &fileName, bool isDir, uint32_t cluster, uint8_t attributes,
+                   uint16_t time, uint16_t date, uint8_t ms, uint32_t size) {
     uint32_t lastNumberFormat = 0;
     uint32_t numberOfEntry = requiredFileEntries(fileName);
     uint32_t curNoEmptyEntries = 0;

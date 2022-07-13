@@ -8,6 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "*.cpp",
+                "*.c",
                 "-o",
                 "${fileDirname}/main",
                 "-pthread"

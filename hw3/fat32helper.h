@@ -1,4 +1,5 @@
 #pragma once
+// #define DEBUG
 #include "fat32.h"
 #include <iostream>
 #include <string.h>
@@ -11,6 +12,12 @@
 #define GETHOUR(timeParam) (((timeParam)&0b1111100000000000) >> 11)
 #define GETMIN(timeParam) (((timeParam)&0b0000011111100000) >> 5)
 #define GETDATACLUSTER(fatfile83) (((fatfile83).eaIndex << 16) + ((fatfile83).firstCluster))
+
+#ifdef DEBUG
+#define DEBUG_PRINT(x) std::wcerr << x << std::endl;
+#else
+#define DEBUG_PRINT(x)
+#endif
 
 extern BPB_struct *biosParameterBlock;
 extern uint32_t *FATbeginning;

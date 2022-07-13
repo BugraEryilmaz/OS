@@ -16,8 +16,8 @@ void changeDir(std::wstring dir) {
                 if (pos == std::string::npos) break;
                 size_t pos2 = currentDirStr.rfind(L'/', pos - 1);
                 if (pos2 == std::string::npos) break;
+                // currentDirStr.erase(pos2 + 1, pos - pos2 + 2);
                 currentDirStr.erase(pos2, pos - pos2 + 3);
-                // if (currentDirStr.back() == '/') currentDirStr.pop_back();
             } while (true);
             // simplify .'s in dir str
 
@@ -27,6 +27,8 @@ void changeDir(std::wstring dir) {
                 currentDirStr.erase(pos, 2);
                 // if (currentDirStr.back() == '/') currentDirStr.pop_back();
             } while (true);
+            if (currentDirStr.back() == '/') currentDirStr.pop_back();
+            if (currentDirStr.empty()) currentDirStr = L"/";
         }
         currentDir = file;
     }

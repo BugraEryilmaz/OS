@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 23 11:56:31 2022
+# Make data base, printed on Tue Jul 12 18:23:26 2022
 
 # Variables
 
@@ -17,7 +17,7 @@ LC_ALL = C
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
-STARSHIP_SESSION_KEY = 1463811695260422
+STARSHIP_SESSION_KEY = 3804146493070215
 # environment
 WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # environment
@@ -38,8 +38,6 @@ PWD = /mnt/d/ders/ceng334/METU-CENG-OS
 %D = $(patsubst %/,%,$(dir $%))
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# environment
-VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
@@ -52,8 +50,6 @@ LANG = C
 MAKEFLAGS = pqrR
 # makefile
 CURDIR := /mnt/d/ders/ceng334/METU-CENG-OS
-# environment
-VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
@@ -70,8 +66,6 @@ WAYLAND_DISPLAY = wayland-0
 MAKEFILE_LIST := 
 # automatic
 @F = $(notdir $@)
-# environment
-VSCODE_VERBOSE_LOGGING = true
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -93,13 +87,11 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /root/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Git/cmd:/mnt/c/mingw64/bin:/mnt/c/flutter/flutter/bin:/mnt/c/Users/bugra/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Users/bugra/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/bugra/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/bugra/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/bugra/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/bugra
+PATH = /root/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Git/cmd:/mnt/c/flutter/flutter/bin:/mnt/c/Users/bugra/AppData/Local/Android/Sdk/platform-tools:/mnt/c/mingw64/bin:/mnt/c/Users/bugra/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/bugra/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/bugra/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/bugra/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/bugra
 # default
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -109,7 +101,7 @@ HOSTTYPE = x86_64
 # automatic
 +F = $(notdir $+)
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/1382_interop
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -125,21 +117,21 @@ USER = root
 # default
 MAKE_VERSION := 4.3
 # environment
-VSCODE_EXTHOST_WILL_SEND_SOCKET = true
-# environment
 DEBUGINFOD_URLS = 
 # environment
 STARSHIP_SHELL = bash
 # environment
-_ = /root/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
+_ = /root/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/node
 # environment
 XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-99bb17cc-0cc1-4b44-bee0-4dfa3f1dbe88.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-a9f3bdc8-bb70-4c9f-b83a-d35a94ee7726.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /root
+# environment
+ELECTRON_RUN_AS_NODE = 1
 # environment
 TERM = xterm-256color
 # default
@@ -153,7 +145,7 @@ WSL_DISTRO_NAME = kali-linux
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=2/97=2%
+# Load=66/1024=6%, Rehash=0, Collisions=1/93=1%
 
 # Pattern-specific Variable Values
 
@@ -161,9 +153,9 @@ WSL_DISTRO_NAME = kali-linux
 
 # Directories
 
-# . (device 65, inode 562949954792318): 8 files, no impossibilities.
+# . (device 65, inode 562949954792318): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -213,12 +205,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 136 B / avg = 8 B
-# current buf: size = 8162 B / used = 136 B / count = 16 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 141 B / avg = 8 B
+# current buf: size = 8162 B / used = 141 B / count = 17 / avg = 8 B
 
-# strcache performance: lookups = 19 / hit rate = 15%
+# strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=0/19=0%
-# Finished Make data base on Thu Jun 23 11:56:31 2022
+# Load=17/8192=0%, Rehash=0, Collisions=0/20=0%
+# Finished Make data base on Tue Jul 12 18:23:26 2022
 
  

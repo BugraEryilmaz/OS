@@ -15,11 +15,11 @@ void deleteFile(FatFileEntry *file) {
 
 void moveFile(FatFileEntry *src, FatFileEntry *dst, std::wstring fileName) {
     if (src == NULL || dst == NULL) {
-        // std::cerr << "Error: source or destination is NULL" << std::endl;
+        DEBUG_PRINT("Error: source or destination is NULL");
         return;
     }
     if (src == dst) {
-        // std::cerr << "Error: source and destination are the same" << std::endl;
+        DEBUG_PRINT("Error: source and destination are the same");
         return;
     }
     FatFileEntry *iter = src;
@@ -41,7 +41,7 @@ void moveFile(FatFileEntry *src, FatFileEntry *dst, std::wstring fileName) {
     } while (iter);
 
     if (!iter) {
-        // std::cerr << "Error: file not found" << std::endl;
+        DEBUG_PRINT("Error: file not found");
         return;
     }
 
@@ -51,7 +51,7 @@ void moveFile(FatFileEntry *src, FatFileEntry *dst, std::wstring fileName) {
                       info.fatFileInfo->creationTime, info.fatFileInfo->creationDate, info.fatFileInfo->creationTimeMs,
                       info.fatFileInfo->fileSize);
     if (!mksuccess) {
-        // std::cerr << "Error: failed to create file possibly duplicate" << std::endl;
+        DEBUG_PRINT("Error: failed to create file possibly duplicate");
         return;
     }
     // delete the old file

@@ -3,7 +3,7 @@
 // a function to print the file content
 void printFile(FatFileEntry *file, std::wstring fileName) {
     if (file == NULL) {
-        // std::cerr << "Error: source is NULL" << std::endl;
+        DEBUG_PRINT("Error: source is NULL");
         return;
     }
     FatFileEntry *iter = file;
@@ -22,11 +22,15 @@ void printFile(FatFileEntry *file, std::wstring fileName) {
         }
     }
     if (info.fatFileInfo->attributes & FOLDERMASK) {
-        // std::cerr << "Error: file is a folder" << std::endl;
+        DEBUG_PRINT("Error: file is a folder");
         return;
     }
     // print the file content
     uint32_t cluster = info.fatFileInfo->firstCluster | (info.fatFileInfo->eaIndex << 16);
+    if (cluster == 0) {
+        DEBUG_PRINT("Error: file is empty");
+        return;
+    }
     char *buffer = (char *)DATAbeginning + (cluster - 2) * CLUSTER_SIZE;
     for (size_t i = 0; true; i++) {
         uint32_t idx = i % CLUSTER_SIZE;
@@ -37,4 +41,5 @@ void printFile(FatFileEntry *file, std::wstring fileName) {
         if (buffer[idx] == '\0' || buffer[idx] == EOF) break;
         wprintf(L"%c", buffer[idx]);
     }
+    wprintf(L"\n");
 }

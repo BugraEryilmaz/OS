@@ -10,6 +10,11 @@ namespace ls {
                 if (!folder) break;
                 continue;
             }
+            if (folder->msdos.filename[0] == '.') {
+                folder = nextFileEntry(folder);
+                if (!folder) break;
+                continue;
+            }
             fileInfo ret = getFileInfo(folder);
             printFileName(ret.filename);
             folder = ret.nextFile;
@@ -31,12 +36,24 @@ namespace ll {
         wprintf(L"%hs %.2u %.2u:%.2u ", months[GETMONTH(name.fatFileInfo->modifiedDate)],
                 GETDAY(name.fatFileInfo->modifiedDate), GETHOUR(name.fatFileInfo->modifiedTime),
                 GETMIN(name.fatFileInfo->modifiedTime));
+
+#ifdef DEBUG
+        wprintf(L"%ls cluster:%u\n", name.filename.c_str(),
+                name.fatFileInfo->firstCluster | (name.fatFileInfo->eaIndex << 16));
+#else
         wprintf(L"%ls\n", name.filename.c_str());
+
+#endif
     }
 
     void printFolder(FatFileEntry *folder) {
         while (folder->msdos.filename[0] != 0x00) {
             if (folder->msdos.filename[0] == 0xE5) {
+                folder = nextFileEntry(folder);
+                if (!folder) break;
+                continue;
+            }
+            if (folder->msdos.filename[0] == '.') {
                 folder = nextFileEntry(folder);
                 if (!folder) break;
                 continue;
